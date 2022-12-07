@@ -115,11 +115,11 @@ ul {
   width: fit-content;
   color: white;
   text-transform: uppercase;
-  transition: var(--duration);
+  /* transition: var(--duration); */
 }
 .link:hover {
-  font-weight: bold;
-  outline: 5px solid transparent;
+  /* font-weight: bold; */
+  /* outline: 5px solid transparent; */
   border-radius: 20px;
 }
 /* End Components */
@@ -359,21 +359,6 @@ header .form:hover input {
 .services .srv h3 {
   margin: 0 0 20px;
   transition: calc(var(--duration) + 0.2s);
-}
-.services .srv:hover h3 {
-  background-color: var(--main-color);
-  width: fit-content;
-  color: white;
-  padding: 5px 10px;
-}
-@media (max-width: 767px) {
-  .services .srv:hover h3 {
-    background-color: var(--main-color);
-    width: fit-content;
-    color: white;
-    padding: 5px 20px;
-    margin: auto;
-  }
 }
 .services .srv p {
   font-weight: 300;
@@ -793,3 +778,159 @@ header .form:hover input {
   font-weight: 600;
 }
 /* End Quote */
+
+/* Start Pricing */
+.pricing {
+  padding: var(--section-padding);
+}
+.pricing .pricing-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.pricing .pricing-list .list {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+.pricing .pricing-list .head {
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 20px;
+}
+.pricing .list h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.pricing .list span {
+  font-size: 60px;
+  font-weight: bold;
+  position: relative;
+}
+.pricing .list span::before {
+  content: "$";
+  position: absolute;
+  top: 10px;
+  left: -15px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.pricing .list span::after {
+  content: "/Mo";
+  position: absolute;
+  bottom: 16px;
+  left: 76px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.pricing .list ul {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .list ul li {
+  padding: 20px;
+  position: relative;
+}
+.pricing .list ul li:not(:last-child)::after {
+  content: "";
+  background-color: var(--main-color);
+  height: 1px;
+  width: 170px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+}
+.pricing .list a {
+  margin: 20px auto;
+  display: block;
+  border: 1px solid var(--main-color);
+  color: black;
+  transition: 0.1s;
+}
+.pricing .contact p {
+  margin: 50px auto 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.pricing .contact a {
+  background-color: #19c8fa;
+  margin: auto;
+}
+.pricing .contact a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+/* End Pricing */
+
+/* Start Subscribe */
+.subscribe {
+  padding: var(--section-padding);
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.subscribe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+.subscribe .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .subscribe .container {
+    flex-direction: column;
+  }
+}
+.subscribe form {
+  display: flex;
+  position: relative;
+}
+.subscribe form input {
+  outline: none;
+}
+.subscribe form ::placeholder {
+  color: white;
+}
+.subscribe input[type="email"] {
+  background: none;
+  caret-color: var(--main-color);
+  padding: 20px 20px 20px 60px;
+  border: 1px solid white;
+  border-right: none;
+  color: white;
+  width: calc(100% - 120px);
+}
+.subscribe input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px;
+  border: 1px solid white;
+  border-left: none;
+  text-transform: uppercase;
+  width: 120px;
+}
+.subscribe form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  font-size: 25px;
+}
+.subscribe p {
+  margin-left: 50px;
+  line-height: 2;
+}
+@media (max-width: 991px) {
+  .subscribe p {
+    margin: 30px 0 0;
+  }
+}
+/* End Subscribe */
